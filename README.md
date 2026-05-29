@@ -1,60 +1,73 @@
 # Offshore Microgrid Optimization
 
-This repository contains organized notebooks, supporting Python modules, and archived materials for offshore microgrid optimization experiments and weather data preparation.
+This repository provides a Python-based framework for offshore microgrid optimization and analysis. It includes tools for weather data preparation, digital twin development, thermodynamic and energy system modeling, scenario generation, optimization workflows, and post-processing of simulation results. The framework is designed to support the evaluation and optimization of offshore energy systems under varying operational and environmental conditions.
 
-## Repository structure
+## Associated Publication
 
-- `notebooks/` – active notebooks in a polished, user-facing layout.
-  - `notebooks/00-data-prep/` – data preparation and digital twin notebooks.
-  - `notebooks/01-optimization/` – optimization notebooks for GF generation, daily scenario runs, and post-processing.
-  - `notebooks/02-weather/` – weather-related notebooks.
-    - `notebooks/02-weather/forecast/` – forecast data notebooks.
-    - `notebooks/02-weather/collection/` – historical weather collection notebooks.
-- `src/` – reusable Python helper scripts and function modules extracted from legacy notebooks.
-- `data/backup-artifacts/` – supporting model artifacts, dataset files, and binary resources.
-- `archive/legacy-notebooks/` – archived notebook versions and experiment backups.
+This repository contains the modeling and optimization framework used in:
 
-## Getting started
+**Banihabib, R., and Assadi, M. (2023).**  
+*Towards a low-carbon future for offshore oil and gas industry: A smart integrated energy management system with floating wind turbines and gas turbines.*  
+**Journal of Cleaner Production**.  
+DOI: https://doi.org/10.1016/j.jclepro.2023.138742
 
-1. Install Git LFS before cloning/pushing this repository, because several required model/data artifacts are larger than normal GitHub file limits.
-2. Create a Python environment from `requirements.txt`. The notebooks were smoke-tested with the local Anaconda Python 3.8 environment.
-3. Open the main optimization notebooks in `notebooks/01-optimization/`:
-   - `Offshore Microgrid Optimization - IM - GF - Day 1.ipynb`
-   - `Offshore Microgrid Optimization - IM - GF - Day 2.ipynb`
-   - `Offshore Microgrid Optimization - IM - GF - Day 3.ipynb`
-   - `Offshore Microgrid Optimization - IM - GF - Day 4.ipynb`
-   - `Offshore Microgrid Optimization - IM - GF - Day 5.ipynb`
-   - `Offshore Microgrid Optimization - IM - GF - Day 6.ipynb`
-   - `Offshore Microgrid Optimization - IM - GF - Day 7.ipynb`
-4. Run notebooks from the repository root or from their own folder. They locate `src/` and `data/backup-artifacts/` automatically.
-5. Generated figures, models, and result spreadsheets are written under `outputs/`.
+## Features
 
-## Validation
+- Offshore microgrid optimization
+- Digital twin development
+- Weather forecasting and data processing
+- Thermodynamic and energy system modeling
+- Scenario generation and analysis
+- Post-processing and visualization of results
 
-Quick repository checks:
+## Repository Structure
+
+- `src/` – Python modules and helper functions
+- `notebooks/` – Jupyter notebooks for simulations and analyses
+- `data/` – Input datasets and supporting resources
+- `outputs/` – Generated results and figures (not tracked by Git)
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
-python -m unittest tests/test_repository_readiness.py
+git clone https://github.com/your-username/offshore-microgrid-optimization.git
+cd offshore-microgrid-optimization
 ```
 
-Notebook setup smoke test:
+2. Install dependencies:
 
 ```bash
-python scripts/smoke_test_day_notebooks.py
+pip install -r requirements.txt
 ```
 
-The smoke test executes the setup, data-loading, and model-loading cells for all seven Day notebooks.
+3. Launch Jupyter Notebook and open the desired workflow.
 
-Execute the Day notebooks and save cell outputs:
+## Usage
 
-```bash
-python scripts/run_day_notebooks.py
+The repository contains notebooks and Python modules for:
+
+- Preparing and processing weather data
+- Developing digital twin models
+- Running offshore microgrid optimization studies
+- Evaluating operational scenarios
+- Post-processing and visualizing simulation results
+
+## Citation
+
+If you use this repository in your research, please cite:
+
+```bibtex
+@article{banihabib2023,
+  title={Towards a low-carbon future for offshore oil and gas industry: A smart integrated energy management system with floating wind turbines and gas turbines},
+  author={Banihabib, Reyhaneh and Assadi, Mohsen},
+  journal={Journal of Cleaner Production},
+  year={2023},
+  doi={10.1016/j.jclepro.2023.138742}
+}
 ```
 
-The runner sets `OFFSHORE_MG_MAX_ITR=1` by default so the notebooks complete in a practical time. For fuller optimization runs, set a larger value before running the script.
+## License
 
-## Notes
-
-- `.gitattributes` marks required binary artifacts for Git LFS.
-- `outputs/` is ignored so notebook runs do not pollute commits.
-- `archive/legacy-notebooks/` keeps earlier versions and historical notebooks separate from the active workflow.
+This project is licensed under the MIT License. See the LICENSE file for details.
