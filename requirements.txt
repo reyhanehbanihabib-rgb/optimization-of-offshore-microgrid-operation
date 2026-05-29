@@ -1,0 +1,16 @@
+ipykernel
+jupyter
+keras
+matplotlib
+nbclient
+nbformat
+numpy
+openpyxl
+pandas
+scikit-learn
+scikit-optimize
+scipy
+tabulate
+terminaltables
+tensorflow
+tsmoothie
